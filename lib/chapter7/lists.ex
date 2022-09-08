@@ -21,4 +21,6 @@ defmodule MyList do
   def bigger(a, b) when a > b, do: a
   def bigger(a, b) when a <= b, do: b
   def max([head | tail]), do: reduce(tail, head, &bigger/2)
+
+  def span(from, to) when from != to, do: [from | span(from + 1, to)]
 end
